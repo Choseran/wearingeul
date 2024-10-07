@@ -15,20 +15,19 @@
             <div class="productDetailInfo spaceBetween">
                 <div class="infoLeft">
                     <div class="infoBigImg">
-                        <img src="@/assets/img/product1/smilecat1.jpg" alt="">
+                        <img :src="require(`@/assets/img/product1/smilecat${bigImgNum}.jpg`)" alt="smailecat">
                     </div>
                     <div class="infoSmallImg spaceBetween">
-                        <div v-for="n in 6" :key="n" >
-                            <img :src="require(`@/assets/img/product1/smilecat${n}.jpg`)" alt="smailecat">
+                        <div v-for="n in 6" :key="n" @click="detailHandler(n)" :class="{on:n == selected}">
+                            <img :src="require(`@/assets/img/product1/smilecat${n}.jpg`)" alt="smailecat" >
                         </div>
                     </div>
-                    <!-- https://pridiot.tistory.com/162 -->
                 </div>
                 <div class="infoRight">
                     <div class="infoTitle spaceBetween">
                         <div>
                             <h1>스마일캣 컬러스와치 명함지 50매</h1>
-                            <p><em>6,000</em> 원</p>
+                            <p><em>{{ EA.toLocaleString('ko-KR') }}</em> 원</p>
                         </div>
                         <router-link to="/">
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,12 +55,12 @@
                                     <p>{{ count }}</p>
                                     <button @click="countPlus">+</button>
                                 </div>
-                                <div><p><em>{{ price }}</em> 원</p></div>
+                                <div><p><em>{{ price.toLocaleString('ko-KR') }}</em> 원</p></div>
                             </div>
                         </div>
                         <div class="infoPcs spaceBetween">
                             <p>총 상품금액(<em>{{ count }}</em>개)</p>
-                            <p class="infoNum"><em>{{ price }}</em> 원</p>
+                            <p class="infoNum"><em>{{ price.toLocaleString('ko-KR') }}</em> 원</p>
                         </div>
                     </div>
                     <div class="infoBtn spaceBetween">
@@ -85,21 +84,99 @@
                 <img src="@/assets/img/product1/smilecat-detail.jpg">
             </div>
         </div>
-        <detail-bottom-component/>
-        <detail-bottom-component/>
+        <div class="productDetailReview">
+            <h2>구매평<em>(0)</em></h2>
+            <div class="btnWrap">
+                <div class="btnW">
+                    <button>구매평 작성</button>
+                </div>
+            </div>
+            <div class="detailBottomText">
+                <p>등록된 구매평이 없습니다.</p>
+            </div>
+        </div>
+        <div class="productDetailReview">
+            <h2>Q&A<em>(0)</em></h2>
+            <div class="btnWrap">
+                <div class="btnW">
+                    <button>상품문의</button>
+                </div>
+                <div class="btnW">
+                    <button>1:1 문의</button>
+                </div>
+            </div>
+            <div class="detailBottomText">
+                <p>등록된 문의가 없습니다.</p>
+            </div>
+        </div>
+
+        <div class="productDetailRec">
+            <div>
+                <h1>이 상품을 구매한 고객님이 좋아하신 상품</h1>
+            </div>
+            <swiper class="mySwiper goodsContent"
+                :modules="recModules"
+                :autoplay="recAutoplay"
+                :speed="1500"
+                :loop="true"
+                :slidesPerView="4"  
+                :slidesPerGroup="4"
+                :spaceBetween="20"
+            >
+                <swiper-slide v-for="goods in recGoods" :key="goods">
+                    <RouterLink to="/">
+                        <div class="goodsImg" v-if="goods.i != 4">
+                            <img :src="require(`@/assets/img/product1/rec/product${goods.i}_hover.jpg`)" :alt="`${goods.title}`">
+                            <img :src="require(`@/assets/img/product1/rec/product${goods.i}.jpg`)" :alt="`${goods.title}`">
+                        </div>
+                        <div class="goodsImg" v-else-if="goods.i = 4">
+                            <img :src="require(`@/assets/img/product1/rec/product${goods.i}_hover.jpg`)" :alt="`${goods.title}`">
+                            <img :src="require(`@/assets/img/product1/rec/product${goods.i}.gif`)" :alt="`${goods.title}`">
+                        </div>
+                    </RouterLink>
+                    <div class="goodsText">
+                        <RouterLink to="/" class="goodsTitle">{{ goods.title }}</RouterLink>
+                        <div>
+                            <RouterLink to="/" class="goodsPrice">{{ goods.price }}</RouterLink>
+                        </div>
+                    </div>
+                </swiper-slide>
+            </swiper>
+        </div>
     </div>
 </template>
 
 <script>
-import DetailBottomComponent from '@/components/DetailBottomComponent.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import { Autoplay } from 'swiper';
 export default {
-  components: { DetailBottomComponent },
     name: "DetailView",
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
     data(){
         return{
             count: 1,
             EA: 6000,
             price: 6000,
+            bigImgNum: 1,
+            selected: 1,
+            recAutoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            recGoods: [
+                { i: 1, title: '[단품] 네 컷 사진 컬러스와치 Impression 임프레션 30매 2종', price: '6,000 원'},
+                { i: 2, title: '앨리스의 물약 컬러 스와치 A5', price: '5,000 원'},
+                { i: 3, title: '즉석사진 컬러스와치 Impression 임프레션 50매', price: '6,000 원'},
+                { i: 4, title: '앨리스 (이상한 나라의 앨리스) 잉크 30ml', price: '23,000 원'},
+                { i: 5, title: '잉크 컬러 스와치북 A5 (노트형 / Impression)', price: '10,000 원'},
+                { i: 6, title: '잉크 컬러스와치 Impression 임프레션 04_16 Rounds', price: '5,000 원'},
+                { i: 7, title: '잉크 컬러스와치 Impression 임프레션 02_12 Vials', price: '5,000 원'},
+                { i: 8, title: '잉크 컬러스와치 Impression 임프레션 01_10 Ink Bottle', price: '5,000 원'},
+            ]
         }
     },
     methods:{
@@ -112,7 +189,16 @@ export default {
         countPlus(){
             this.count++;
             this.price = this.count*this.EA;
+        },
+        detailHandler(n) {
+            this.bigImgNum = n;
+            this.selected = n;
         }
+    },
+    setup() {
+        return {
+            recModules: [Autoplay],
+        };
     }
 }
 </script>
