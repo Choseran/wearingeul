@@ -1,0 +1,19 @@
+<template>
+  <BaseLayout/>
+</template>
+
+<script>
+import BaseLayout from './layout/BaseLayout.vue'
+
+export default {
+  name: 'App',
+  components: {
+    BaseLayout
+  }
+}
+</script>
+
+<style>
+  @import './assets/css/reset.css';
+  @import './assets/css/style.css';
+</style>

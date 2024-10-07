@@ -1,0 +1,635 @@
+.essential::after{
+    content: '*';
+    color: #dd4242;
+}
+.spaceBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.colorB{
+    color: #1c1c1c !important;
+}
+.btnB button{
+    width: 100%;
+    background-color: #1c1c1c;
+    color: #fff;
+    line-height: 50px;
+    font-size: 14px;
+}
+.btnW button{
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px #1c1c1c inset;
+    color: #1c1c1c;
+    line-height: 50px;
+    font-size: 14px;
+}
+
+header{
+    width: 100%;
+    padding: 60px 0 30px;
+    border-bottom: 1px solid #1c1c1c;
+}
+header .headerWrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+header .headerTop{
+    margin-bottom: 58px;
+    position: relative;
+}
+
+header .logo{
+    display: inline-block;
+    width: 152px;
+}
+
+header .headerRight{
+    display: inline-flex;
+    margin-right: -18px;
+}
+header .headerRight input {
+    display: inline-block;
+    width: 231px;
+    font-size: 16px;
+    line-height: 39px;
+}
+header .headerRight a,
+header .headerRight button{
+    margin-right: 18px;
+}
+header .headerRight svg{
+    display: inline-block;
+    width: 40px;
+}
+
+header .headerBottom .submenu{
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 70px;
+    font-weight: 600;
+}
+
+.shoppingModal{
+    position: absolute;
+    top: 52px;
+    right: 58px;
+    width: 349px;
+    height: 560px;
+    background-color: #fff;
+    border: 1px solid #1c1c1c;
+    padding: 12px;
+    z-index: 15;
+}
+
+.modalTop{
+    border-bottom: 1px solid #1c1c1c;
+    align-items: center;
+    padding-left: 10px;
+    padding-bottom: 12px;
+}
+.modalTop p{
+    font-size: 18px;
+}
+.modalTop button{
+    margin-right: 0 !important;
+    width: 40px;
+    height: 40px;
+}
+
+.modalBottom{
+    padding: 0 10px
+}
+.modalBottom .shoppingList{
+    padding: 15px 0;
+    border-bottom: 1px solid #bfbfbf;
+    display: flex;
+    align-items: center;
+}
+.modalBottom .shoppingList:last-child{
+    border-bottom: 0;
+}
+
+.modalBottom .shoppingImg{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ebebeb;
+    margin-right: 20px;
+}
+.modalBottom .shoppingText{
+    width: 205px;
+}
+
+.modalBottom h1{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.modalBottom p{
+    font-size: 14px;
+    font-weight: 500;
+    color: #7a7a7a;
+}
+
+.submenu .submenuWrap{
+    position: absolute;
+    left: 0;
+    top: 218px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+.submenu .submenuList{
+    width: 100%;
+    background-color: #fff;
+}
+.submenu .submenuList .submenuPart{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+.submenu .submenuList .submenuPart>li{
+    width: 183px;
+}
+.submenu .submenuList .submenuTitle{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.submenu .submenuList .submenuTitle p{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+.submenu .submenuList .submenuTitle svg{
+    width: 20px;
+    height: 20px;
+}
+.submenu .submenuList .detailMenu li{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.bannerSwiper{
+    margin-top: 30px;
+    padding-bottom: 43px !important;
+}
+.bannerSwiper .swiper-slide{
+    text-align: center;
+}
+.bannerSwiper a{
+    display: inline-block;
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid #ebebeb;
+    overflow: hidden;
+}
+.bannerSwiper a img{
+    display: block;
+}
+.bannerSwiper .swiper-pagination-bullet{
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 10px !important;
+    border: 1px solid #1c1c1c;
+    background: none;
+    opacity: 1;
+}
+.bannerSwiper .swiper-pagination-bullet-active{
+    background: #1c1c1c;
+}
+
+.mainContent{
+    width: 1200px;
+    margin: 100px auto 0;
+}
+.mainContent .mainContentTop{
+    width: 100%;
+    align-items: end;
+    padding-bottom: 50px;
+}
+.mainContent .mainContentTop p{
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.mainContent .mainContentBottom .mainGoodsContent{
+    flex-wrap: wrap;
+}
+.mainContent .mainContentBottom .goodsContent a{
+    display: inline-block;
+    width: 100%;
+}
+
+.mainContent .mainContentBottom .goodsContent li{
+    width: 285px;
+    margin-bottom: 36px;
+}
+
+.mainContent .mainContentBottom .goodsContent .goodsImg{
+    position: relative;
+    border: 1px solid #ebebeb;
+    width: 100%;
+    height: 298px;
+}
+.mainContent .mainContentBottom .goodsContent .goodsImg img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+.mainContent .mainContentBottom .goodsContent .goodsImg img:last-child:hover{
+    opacity: 0;
+}
+
+.mainContent .mainContentBottom .goodsContent .goodsText{
+    margin-top: 20px;
+}
+.mainContent .mainContentBottom .goodsContent .goodsTitle{
+    line-height: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+}
+.mainContent .mainContentBottom .goodsContent .goodsSale {
+    font-size: 16px;
+    font-weight: 400;
+    color: #bfbfbf;
+    margin-bottom: 2px;
+    text-decoration: line-through;
+}
+.mainContent .mainContentBottom .goodsContent .goodsPrice {
+    font-size: 18px;
+    font-weight: 500;
+    color: #7a7a7a;
+}
+
+.saleContent{
+    padding-bottom: 36px;
+}
+
+.collaboContent .mainContentBottom>div{
+    width: calc(50% - 20px);
+}
+
+.collaboContent .mainContentBottom .collaboTop{
+    padding-bottom: 30px;
+}
+.collaboContent .mainContentBottom .collaboImg{
+    width: 100%;
+    height: 360px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #ebebeb;
+    overflow: hidden;
+}
+.collaboContent .mainContentBottom .collaboTitle a{
+    font-size: 20px;
+}
+.collaboContent .mainContentBottom .collaboTitle a:first-child{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.collaboContent .mainContentBottom .collaboBottom>div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.collaboContent .mainContentBottom .collaboProduct{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    border: 1px solid#ebebeb;
+    overflow: hidden;
+}
+.collaboContent .mainContentBottom .collaboProductTitle{
+    display: inline-block;
+    margin-left: 33px;
+    font-weight: 500;
+}
+.collaboContent .mainContentBottom .collaboProductTitle a{
+    font-size: 20px;
+    font-weight: 400
+}
+.collaboContent .mainContentBottom .collaboProductTitle a:first-child{
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+
+footer{
+    width: 100%;
+    margin-top: 180px;
+    border-top: 1px solid #1c1c1c;
+}
+footer .footerWrap{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 53px 0;
+    font-size: 14px;
+}
+footer .footerWrap .footerTop{
+    margin-bottom: 23px;
+}
+footer .footerWrap li{
+    display: inline-block;
+    margin-right: 50px;
+}
+footer .footerWrap select{
+    font-size: 14px;
+}
+footer .footerWrap .footerText{
+    margin-bottom: 30px;
+    line-height: 19px;
+}
+footer .footerWrap i{
+    display: inline-block;
+    font-weight: 600;
+}
+
+.listWrap{
+    width: 1200px;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+.listMenu{
+    margin-right: 20px;
+}
+.listMenu .titleMenu{
+    font-size: 20px;
+    font-weight: 600;
+}
+.listMenu>ul{
+    margin-top: 30px;
+}
+.listMenu>ul>li{
+    margin-bottom: 25px;
+}
+.listMenu .listMenu{
+    font-size: 18px;
+    font-weight: 500;
+}
+.listMenu li .listSubmenu{
+    margin-left: 20px;
+}
+.listMenu li .listSubmenu li{
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.listContent{
+    width: 895px;
+    margin: 0;
+}
+.listContent .mainContentTop{
+    padding-bottom: 20px;
+    justify-content: end;
+}
+.listContent .mainContentTop select{
+    width: 102px;
+    font-size: 14px;
+}
+
+.detailWrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+.detailWrap .productDetailTop{
+    margin-bottom: 70px;
+}
+.detailWrap .productDetailTop ul{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+}
+.detailWrap .productDetailTop ul li{
+    font-size: 12px;
+    color: #7a7a7a;
+}
+.detailWrap .productDetailTop ul li:last-child{
+    font-weight: 500;
+    color: #1c1c1c;
+}
+.detailWrap .productDetailTop ul svg{
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+}
+
+.productDetailInfo>div{
+    width: calc(50% - 20px);
+}
+.productDetailInfo .infoLeft .infoBigImg{
+}
+.productDetailInfo .infoLeft .infoSmallImg{
+    margin-top: 20px;
+}
+.productDetailInfo .infoLeft .infoSmallImg div{
+    width: 88px;
+    height: 88px;
+    cursor: pointer;
+}
+.productDetailInfo .infoLeft .infoSmallImg div.on{
+    box-shadow: 0 0 0 2px #1c1c1c inset;
+}
+
+.productDetailInfo .infoRight .infoTitle{
+    padding-bottom: 30px;
+    border-bottom: 1px solid #9d9d9d;
+}
+.productDetailInfo .infoRight .infoTitle h1{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.productDetailInfo .infoRight .infoTitle p{
+    font-size: 30px;
+    font-weight: 600;
+}
+.productDetailInfo .infoRight .infoDetail{
+    padding: 50px 0 30px;
+}
+.productDetailInfo .infoRight .infoDetail p{
+    display: inline-block;
+}
+.productDetailInfo .infoRight .infoDetail>p{
+    color: #7a7a7a;
+    margin-bottom: 30px;
+}
+.productDetailInfo .infoRight .infoDetail .infoText{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.productDetailInfo .infoRight .infoDetail .infoText b{
+    font-weight: 500;
+}
+.productDetailInfo .infoRight .infoDetail .infoText p{
+    color: #7a7a7a;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+.productDetailInfo .infoRight .infoDetail .infoText p::after{
+    content: '';
+    display: inline-block;
+    border-right: 1px solid #bfbfbf;
+    height: 17px;
+    margin-left: 10px;
+}
+.productDetailInfo .infoRight .infoDetail .infoText p:last-child::after{
+    display: none;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPrice{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding: 15px;
+    background-color: #f6f6f6;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPrice>p{
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #bfbfbf;
+    font-weight: 500;
+    font-size: 12px;
+}
+.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA{
+    display: flex;
+    align-items: center;
+}
+.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA button,
+.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA p{
+    border: 1px solid #bfbfbf;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #fff;
+}
+.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA button{
+    color: #bfbfbf;
+    font-weight: 500;
+    font-size: 20px;
+    width: 24px;
+}
+.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA p{
+    border-left: none;
+    border-right: none;
+    font-size: 14px;
+    width: 57px;
+}
+.productDetailInfo .infoRight .infoDetail .infoPrice div p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPcs p{
+    color: #7a7a7a;
+}
+.productDetailInfo .infoRight .infoDetail .infoPcs .infoNum{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.productDetailInfo .infoRight .infoBtn div{
+    width: 280px;
+}
+
+.productDetailContent ul{
+    width: 100%;
+    display: flex;
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+}
+.productDetailContent ul li{
+    width: 33.333%;
+    text-align: center;
+    line-height: 70px;
+    font-size: 20px;
+}
+.productDetailContent ul li.active{
+    font-weight: 600;
+    box-shadow: 0 -5px 0 0 #1c1c1c inset;
+}
+
+.productDetailContent .productDetailContentImg{
+    padding: 80px 235px;
+}
+
+
+.registerWrap,
+.loginWrap{
+    width: 386px;
+    margin: 100px auto 0;
+    text-align: center;
+}
+.registerWrap h1,
+.loginWrap h1{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.registerWrap .registerInput,
+.loginWrap .loginInput{
+    text-align: left;
+    padding-bottom: 30px;
+}
+.registerWrap .registerInput p,
+.loginWrap .loginInput p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.registerWrap .registerInput input,
+.loginWrap .loginInput input{
+    width: 100%;
+    font-size: 14px;
+    padding: 11px 0;
+}
+
+.loginMiddle{
+    padding-top: 30px;
+    margin-bottom: 70px;
+}
+.loginMiddle a{
+    font-size: 14px;
+    color: #5a5a5a;
+}
+
+.loginBottom p{
+    font-size: 14px;
+}
+.loginBottom div{
+    margin-top: 20px;
+}
+.loginBottom div a{
+    width: 183px;
+    font-size: 14px;
+    line-height: 51px;
+    color: #7a7a7a;
+    background-color: #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginBottom div a.kakaoLogin{
+    background-color: #ffe812;
+    color: #1c1c1c;
+}
+
+.loginBottom div a svg{
+    width: 24px;
+    height: 24px;
+    margin-right: 21px;
+}
