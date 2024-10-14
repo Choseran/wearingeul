@@ -27,9 +27,8 @@
 }
 
 .goodsTag{
-    position: relative;
+    position: absolute;
     width: 100%;
-    height: 100%;
     padding: 10px;
     text-align: right;
     z-index: 5;
@@ -293,7 +292,7 @@ header .headerBottom .submenu{
 }
 
 .goodsContent .goodsText{
-    margin-top: 20px;
+    margin-top: 14px;
 }
 .goodsContent .goodsTitle{
     line-height: 25px;
