@@ -1,8 +1,5 @@
 <template>
     <swiper class="mySwiper bannerSwiper"
-        :slidesPerView="1.576"
-        :centeredSlides="true"
-        :spaceBetween="20"
         :pagination="{clickable: true}"
         :modules="bannerModules"
         :autoplay="bannerAutoplay"
@@ -22,14 +19,14 @@
     <div class="mainContent">
         <div class="mainContentTop spaceBetween">
             <p>베스트 상품</p>
-            <router-link to="/">더보기</router-link>
+            <router-link to="/best">더보기</router-link>
         </div>
         <main-content-component :goodsList="bestGoods" object="best"/>
     </div>
     <div class="mainContent">
         <div class="mainContentTop spaceBetween">
             <p>신상품</p>
-            <router-link to="/">더보기</router-link>
+            <router-link to="/new">더보기</router-link>
         </div>
         <main-content-component :goodsList="newGoods" object="new"/>
     </div>
@@ -38,7 +35,7 @@
     <div class="mainContent saleContent">
         <div class="mainContentTop spaceBetween">
             <p>할인 중인 상품</p>
-            <router-link to="/">더보기</router-link>
+            <router-link to="/sale">더보기</router-link>
         </div>
 
         <div class="mainContentBottom spaceBetween">
@@ -54,6 +51,9 @@
                 <swiper-slide v-for="goods in saleGoods" :key="goods">
                     <RouterLink to="/">
                         <div class="goodsImg">
+                            <div v-if="goods.class" class="goodsTag">
+                                <span v-for="goodsClass in goods.class" :key="goodsClass" :class="goodsClass">{{ goodsClass }}</span>
+                            </div>
                             <img :src="require(`@/assets/img/sale${goods.i}_hover.jpg`)" :alt="`${goods.title}`">
                             <img :src="require(`@/assets/img/sale${goods.i}.jpg`)" :alt="`${goods.title}`">
                         </div>
@@ -171,6 +171,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper';
 import MainContentComponent from '@/components/MainContentComponent.vue';
+import { bestGoods } from '@/assets/js/goodsList/best';
+import { newGoods } from '@/assets/js/goodsList/new';
+import { saleGoods } from '@/assets/js/goodsList/sale';
 
 export default {
     name: 'MainView',
@@ -189,36 +192,9 @@ export default {
                 delay: 3500,
                 disableOnInteraction: false
             },
-            bestGoods: [
-                { i: 1, title: '스마일캣 컬러스와치 명함지 50매', price: '6,000 원'},
-                { i: 2, title: '글입다 자기만의 방 (버지니아 울프) 잉크 30ml', price: '23,000 원'},
-                { i: 3, title: '글입다 행복한 왕자 (오스카 와일드) 잉크 30ml', price: '23,000 원'},
-                { i: 4, title: '글입다 젊은 왕 (오스카 와일드) 잉크 30ml', price: '23,000 원'},
-                { i: 5, title: '글입다 나이팅게일과 장미(오스카 와일드) 잉크 30ml', price: '23,000 원'},
-                { i: 6, title: '글입다 한 방울 잉크 컬러스와치 링 타입(100매)', price: '23,000 원'},
-                { i: 7, title: '[멤버십 전용] 로빈슨 크루소 + Frost 세트 할인', price: '판매가 비공개'},
-                { i: 8, title: '엔키(Enki) 세계 신화 잉크 30ml', price: '23,000 원'},
-            ],
-            newGoods: [
-                { i: 1, title: '글입다 오페라의 유령 메탈 바인더 클립', price: '20,000 원'},
-                { i: 2, title: 'Impression 임프레션 드로잉북 B5 (40매)', price: '12,000 원'},
-                { i: 3, title: '글입다 1984 (조지 오웰) 잉크 30ml', price: '23,000 원'},
-                { i: 4, title: '[단품] 글입다 트레싱 컬러차트 명함지 50매 2종', price: '8,000 원'},
-                { i: 5, title: '글입다 지구에서 달까지(쥘 베른) 잉크 30ml', price: '23,000 원'},
-                { i: 6, title: '글입다 바스커빌가의 개 (코난 도일) 잉크 30ml', price: '23,000 원'},
-                { i: 7, title: 'Impression 임프레션 드로잉북 A5 (40매)', price: '9,000 원'},
-                { i: 8, title: '[단품] 책 속의 책 오브제 북 2종', price: '24,800 원', sale: '35,000 원'},
-            ],
-            saleGoods: [
-                { i: 1, title: '동주의 소포 (윤동주 연필세트+포스트잇+미니북+필사노트)', price: '19,800 원', sale: '21,000 원'},
-                { i: 2, title: '[Synav] 고려청자 버킷백', price: '138,000 원', sale: '170,000 원'},
-                { i: 3, title: '[세트] 책끝 메탈 북마크 책갈피 세계문학전집 20종 세트', price: '89,800 원', sale: '100,000 원'},
-                { i: 4, title: '[세트] 시의 조각들 우표형 마스킹테이프 5종 세트', price: '32,800 원', sale: '35,000 원'},
-                { i: 5, title: '[세트] 내가 사랑한 문장들 떡메모지 6종 세트', price: '22,800 원', sale: '24,000 원'},
-                { i: 6, title: '[세트] 자체검열 마스킹테이프 7mm 8종 (A/B세트)', price: '11,400 원', sale: '12,000 원'},
-                { i: 7, title: '[세트] 시인의 편지(편지지+봉투) A세트 / B세트', price: '27,800 원', sale: '30,000 원'},
-                { i: 8, title: '[세트] 시를 담아 보냅니다, 문학 카드 5종 세트', price: '6,750 원', sale: '7,500 원'},
-            ]
+            bestGoods: bestGoods,
+            newGoods: newGoods,
+            saleGoods: saleGoods
         }
     },
     setup() {

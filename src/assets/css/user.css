@@ -1,0 +1,72 @@
+.registerWrap,
+.loginWrap {
+    width: 386px;
+    margin: 100px auto 0;
+    text-align: center;
+}
+
+.registerWrap h1,
+.loginWrap h1 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.registerWrap .registerInput,
+.loginWrap .loginInput {
+    text-align: left;
+    padding-bottom: 30px;
+}
+
+.registerWrap .registerInput p,
+.loginWrap .loginInput p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.registerWrap .registerInput input,
+.loginWrap .loginInput input {
+    width: 100%;
+    font-size: 14px;
+    padding: 11px 0;
+}
+
+.loginMiddle {
+    padding-top: 30px;
+    margin-bottom: 70px;
+}
+
+.loginMiddle a {
+    font-size: 14px;
+    color: #5a5a5a;
+}
+
+.loginBottom p {
+    font-size: 14px;
+}
+
+.loginBottom div {
+    margin-top: 20px;
+}
+
+.loginBottom div a {
+    width: 183px;
+    font-size: 14px;
+    line-height: 51px;
+    color: #7a7a7a;
+    background-color: #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBottom div a.kakaoLogin {
+    background-color: #ffe812;
+    color: #1c1c1c;
+}
+
+.loginBottom div a svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 21px;
+}

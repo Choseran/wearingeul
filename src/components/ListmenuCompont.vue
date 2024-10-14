@@ -1,7 +1,7 @@
 <template>
     <div class="listMenu">
         <router-link :to="titleLink" class="titleMenu">{{ titleMenu }}</router-link>
-        <ul>
+        <ul v-if="listMenu">
             <li v-for="menu in listMenu" :key="menu">
                 <router-link :to="menu.link" class="listMenu">{{ menu.title }}</router-link>
                 <ul v-if="menu.submenu" class="listSubmenu">

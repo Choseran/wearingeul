@@ -5,9 +5,9 @@
 ```
 npm install
 npm install -g @vue/cli
-npm install vuex --save
+npm install vuex@next --save
 
-npm install --save vuex-persistedstate
+<!-- npm install --save vuex-persistedstate -->
 ```
 
 ### Compiles and hot-reloads for development

@@ -1,0 +1,243 @@
+.detailWrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.detailWrap .productDetailTop {
+    margin-bottom: 70px;
+}
+
+.detailWrap .productDetailTop ul {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+}
+
+.detailWrap .productDetailTop ul li {
+    font-size: 12px;
+    color: #7a7a7a;
+}
+
+.detailWrap .productDetailTop ul li:last-child {
+    font-weight: 500;
+    color: #1c1c1c;
+}
+
+.detailWrap .productDetailTop ul svg {
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+}
+
+.productDetailInfo>div {
+    width: calc(50% - 20px);
+}
+
+.productDetailInfo .infoLeft .infoSmallImg {
+    margin-top: 20px;
+}
+
+.productDetailInfo .infoLeft .infoSmallImg div {
+    width: 88px;
+    height: 88px;
+    cursor: pointer;
+}
+
+.productDetailInfo .infoLeft .infoSmallImg div.on {
+    border: 2px solid #1c1c1c;
+}
+
+.productDetailInfo .infoRight .infoTitle {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #9d9d9d;
+}
+
+.productDetailInfo .infoRight .infoTitle h1 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.productDetailInfo .infoRight .infoTitle p {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.productDetailInfo .infoRight .infoDetail {
+    padding: 50px 0 30px;
+}
+
+.productDetailInfo .infoRight .infoDetail p {
+    display: inline-block;
+}
+
+.productDetailInfo .infoRight .infoDetail>p {
+    color: #7a7a7a;
+    margin-bottom: 30px;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoText {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoText b {
+    font-weight: 500;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoText p {
+    color: #7a7a7a;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoText p::after {
+    content: '';
+    display: inline-block;
+    border-right: 1px solid #bfbfbf;
+    height: 17px;
+    margin-left: 10px;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoText p:last-child::after {
+    display: none;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPrice {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding: 15px;
+    background-color: #f6f6f6;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPrice>p {
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #bfbfbf;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA {
+    display: flex;
+    align-items: center;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA button,
+.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA p {
+    border: 1px solid #bfbfbf;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #fff;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA button {
+    color: #bfbfbf;
+    font-weight: 500;
+    font-size: 20px;
+    width: 24px;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA p {
+    border-left: none;
+    border-right: none;
+    font-size: 14px;
+    width: 57px;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPrice div p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPcs p {
+    color: #7a7a7a;
+}
+
+.productDetailInfo .infoRight .infoDetail .infoPcs .infoNum {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.productDetailInfo .infoRight .infoBtn div {
+    width: 280px;
+}
+
+.productDetailContent ul {
+    width: 100%;
+    display: flex;
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+}
+
+.productDetailContent ul li {
+    width: 33.333%;
+    text-align: center;
+    line-height: 70px;
+    font-size: 20px;
+}
+
+.productDetailContent ul li.active {
+    font-weight: 600;
+    box-shadow: 0 -5px 0 0 #1c1c1c inset;
+}
+
+.productDetailContent .productDetailContentImg {
+    padding: 80px 235px;
+}
+
+.productDetailReview {
+    margin-bottom: 80px;
+}
+
+.productDetailReview h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.productDetailReview h2 em {
+    font-weight: 400;
+    color: #7a7a7a;
+}
+
+.productDetailReview .btnWrap {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #9d9d9d;
+}
+
+.productDetailReview .btnW {
+    width: 183px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.productDetailReview .btnW button {
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.productDetailReview .detailBottomText {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.productDetailReview .detailBottomText p {
+    color: #9d9d9d;
+}
+
+.productDetailRec {
+    padding-bottom: 20px;
+}
+
+.productDetailRec h1 {
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #1c1c1c;
+    margin-bottom: 50px;
+}

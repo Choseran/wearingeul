@@ -1,0 +1,52 @@
+.listWrap {
+    width: 1200px;
+    padding-top: 30px;
+    margin: 0 auto;
+    align-items: baseline;
+}
+
+.listMenu {
+    margin-right: 20px;
+}
+
+.listMenu .titleMenu {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.listMenu>ul {
+    margin-top: 30px;
+}
+
+.listMenu>ul>li {
+    margin-bottom: 25px;
+}
+
+.listMenu .listMenu {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.listMenu li .listSubmenu {
+    margin-left: 20px;
+}
+
+.listMenu li .listSubmenu li {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.listContent {
+    width: 895px;
+    margin: 0;
+}
+
+.listContent .mainContentTop {
+    padding-bottom: 20px;
+    justify-content: end;
+}
+
+.listContent .mainContentTop select {
+    width: 102px;
+    font-size: 14px;
+}

@@ -3,24 +3,13 @@ import router from "@/router";
 const userStore = {
     state: {
         userId: '',
-        userName: '',
-        token: '',
+        userName: null,
     },
-    mutations:{
-        login: function(state, payload){
-            state.userId = payload.userId
-            state.userName = payload.userName
-            state.token = payload.token
-        },
-        loginCheck: function(state){
-            if(!state.token){
-                router.pusj({
-                    name: 'LoginView'
-                }).catch(error => {
-                    console.log(error);
-                })
-            }
+    getter: {
+        isLoggedIn: (state) => {
+            return state.userName != null;
         }
-    }
+    },
+    actions: {},
 }
 // https://developerjournal.tistory.com/15

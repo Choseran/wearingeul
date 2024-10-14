@@ -1,4 +1,4 @@
-.essential::after{
+.required::after{
     content: '*';
     color: #dd4242;
 }
@@ -24,6 +24,37 @@
     color: #1c1c1c;
     line-height: 50px;
     font-size: 14px;
+}
+
+.goodsTag{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    text-align: right;
+    z-index: 5;
+}
+.goodsTag span{
+    font-size: 11px;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #fff;
+    border: 1px solid #ebebeb;
+    padding: 3px 5px;
+    margin-left: 4px;
+
+}
+.goodsTag span:first-child{
+    margin-left: 0;
+}
+.goodsTag .best{
+    background-color: #1c1c1c;
+}
+.goodsTag .new{
+    background-color: #ddc142;
+}
+.goodsTag .sale{
+    background-color: #dd4242;
 }
 
 header{
@@ -149,6 +180,7 @@ header .headerBottom .submenu{
     width: 1200px;
     margin: 0 auto;
     padding: 60px 0;
+    align-items: baseline;
 }
 .submenu .submenuList .submenuPart>li{
     width: 183px;
@@ -182,7 +214,8 @@ header .headerBottom .submenu{
 }
 .bannerSwiper a{
     display: inline-block;
-    width: 100%;
+    width: 1200px;
+    height: 500px;
     border-radius: 50px;
     border: 1px solid #ebebeb;
     overflow: hidden;
@@ -218,6 +251,7 @@ header .headerBottom .submenu{
 
 .mainGoodsContent{
     flex-wrap: wrap;
+    align-items: baseline;
 }
 .goodsContent a{
     display: inline-block;
@@ -354,324 +388,4 @@ footer .footerWrap .footerText{
 footer .footerWrap i{
     display: inline-block;
     font-weight: 600;
-}
-
-.listWrap{
-    width: 1200px;
-    padding-top: 30px;
-    margin: 0 auto;
-}
-
-.listMenu{
-    margin-right: 20px;
-}
-.listMenu .titleMenu{
-    font-size: 20px;
-    font-weight: 600;
-}
-.listMenu>ul{
-    margin-top: 30px;
-}
-.listMenu>ul>li{
-    margin-bottom: 25px;
-}
-.listMenu .listMenu{
-    font-size: 18px;
-    font-weight: 500;
-}
-.listMenu li .listSubmenu{
-    margin-left: 20px;
-}
-.listMenu li .listSubmenu li{
-    margin-top: 20px;
-    font-size: 16px;
-}
-
-.listContent{
-    width: 895px;
-    margin: 0;
-}
-.listContent .mainContentTop{
-    padding-bottom: 20px;
-    justify-content: end;
-}
-.listContent .mainContentTop select{
-    width: 102px;
-    font-size: 14px;
-}
-
-.detailWrap{
-    width: 1200px;
-    margin: 0 auto;
-}
-.detailWrap .productDetailTop{
-    margin-bottom: 70px;
-}
-.detailWrap .productDetailTop ul{
-    margin: 30px 0;
-    display: flex;
-    align-items: center;
-}
-.detailWrap .productDetailTop ul li{
-    font-size: 12px;
-    color: #7a7a7a;
-}
-.detailWrap .productDetailTop ul li:last-child{
-    font-weight: 500;
-    color: #1c1c1c;
-}
-.detailWrap .productDetailTop ul svg{
-    margin: 0 5px;
-    width: 12px;
-    height: 12px;
-}
-
-.productDetailInfo>div{
-    width: calc(50% - 20px);
-}
-.productDetailInfo .infoLeft .infoSmallImg{
-    margin-top: 20px;
-}
-.productDetailInfo .infoLeft .infoSmallImg div{
-    width: 88px;
-    height: 88px;
-    cursor: pointer;
-}
-.productDetailInfo .infoLeft .infoSmallImg div.on{
-    border: 2px solid #1c1c1c;
-}
-
-.productDetailInfo .infoRight .infoTitle{
-    padding-bottom: 30px;
-    border-bottom: 1px solid #9d9d9d;
-}
-.productDetailInfo .infoRight .infoTitle h1{
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-.productDetailInfo .infoRight .infoTitle p{
-    font-size: 30px;
-    font-weight: 600;
-}
-.productDetailInfo .infoRight .infoDetail{
-    padding: 50px 0 30px;
-}
-.productDetailInfo .infoRight .infoDetail p{
-    display: inline-block;
-}
-.productDetailInfo .infoRight .infoDetail>p{
-    color: #7a7a7a;
-    margin-bottom: 30px;
-}
-.productDetailInfo .infoRight .infoDetail .infoText{
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-.productDetailInfo .infoRight .infoDetail .infoText b{
-    font-weight: 500;
-}
-.productDetailInfo .infoRight .infoDetail .infoText p{
-    color: #7a7a7a;
-    margin-left: 10px;
-    display: inline-flex;
-    align-items: center;
-}
-.productDetailInfo .infoRight .infoDetail .infoText p::after{
-    content: '';
-    display: inline-block;
-    border-right: 1px solid #bfbfbf;
-    height: 17px;
-    margin-left: 10px;
-}
-.productDetailInfo .infoRight .infoDetail .infoText p:last-child::after{
-    display: none;
-}
-
-.productDetailInfo .infoRight .infoDetail .infoPrice{
-    margin-top: 40px;
-    margin-bottom: 50px;
-    padding: 15px;
-    background-color: #f6f6f6;
-}
-
-.productDetailInfo .infoRight .infoDetail .infoPrice>p{
-    width: 100%;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed #bfbfbf;
-    font-weight: 500;
-    font-size: 12px;
-}
-.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA{
-    display: flex;
-    align-items: center;
-}
-.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA button,
-.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA p{
-    border: 1px solid #bfbfbf;
-    height: 32px;
-    text-align: center;
-    line-height: 30px;
-    background-color: #fff;
-}
-.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA button{
-    color: #bfbfbf;
-    font-weight: 500;
-    font-size: 20px;
-    width: 24px;
-}
-.productDetailInfo .infoRight .infoDetail .infoPrice .infoEA p{
-    border-left: none;
-    border-right: none;
-    font-size: 14px;
-    width: 57px;
-}
-.productDetailInfo .infoRight .infoDetail .infoPrice div p{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.productDetailInfo .infoRight .infoDetail .infoPcs p{
-    color: #7a7a7a;
-}
-.productDetailInfo .infoRight .infoDetail .infoPcs .infoNum{
-    font-size: 30px;
-    font-weight: 600;
-}
-
-.productDetailInfo .infoRight .infoBtn div{
-    width: 280px;
-}
-
-.productDetailContent ul{
-    width: 100%;
-    display: flex;
-    position: sticky;
-    background-color: #fff;
-    top: 0;
-}
-.productDetailContent ul li{
-    width: 33.333%;
-    text-align: center;
-    line-height: 70px;
-    font-size: 20px;
-}
-.productDetailContent ul li.active{
-    font-weight: 600;
-    box-shadow: 0 -5px 0 0 #1c1c1c inset;
-}
-
-.productDetailContent .productDetailContentImg{
-    padding: 80px 235px;
-}
-
-.productDetailReview{
-    margin-bottom: 80px;
-}
-.productDetailReview h2{
-    font-size: 16px;
-    font-weight: 600;
-}
-.productDetailReview h2 em{
-    font-weight: 400;
-    color: #7a7a7a;
-}
-.productDetailReview .btnWrap{
-    padding-top: 20px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #9d9d9d;
-}
-.productDetailReview .btnW{
-    width: 183px;
-    display: inline-block;
-    margin-right: 20px;
-}
-.productDetailReview .btnW button{
-    font-size: 16px;
-    line-height: 50px;
-}
-
-.productDetailReview .detailBottomText{
-    text-align: center;
-    padding: 100px 0;
-}
-.productDetailReview .detailBottomText p{
-    color: #9d9d9d;
-}
-
-.productDetailRec{
-    padding-bottom: 20px;
-}
-.productDetailRec h1{
-    font-size: 18px;
-    font-weight: 600;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #1c1c1c;
-    margin-bottom: 50px;
-}
-
-.registerWrap,
-.loginWrap{
-    width: 386px;
-    margin: 100px auto 0;
-    text-align: center;
-}
-.registerWrap h1,
-.loginWrap h1{
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 50px;
-}
-.registerWrap .registerInput,
-.loginWrap .loginInput{
-    text-align: left;
-    padding-bottom: 30px;
-}
-.registerWrap .registerInput p,
-.loginWrap .loginInput p{
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-.registerWrap .registerInput input,
-.loginWrap .loginInput input{
-    width: 100%;
-    font-size: 14px;
-    padding: 11px 0;
-}
-
-.loginMiddle{
-    padding-top: 30px;
-    margin-bottom: 70px;
-}
-.loginMiddle a{
-    font-size: 14px;
-    color: #5a5a5a;
-}
-
-.loginBottom p{
-    font-size: 14px;
-}
-.loginBottom div{
-    margin-top: 20px;
-}
-.loginBottom div a{
-    width: 183px;
-    font-size: 14px;
-    line-height: 51px;
-    color: #7a7a7a;
-    background-color: #ebebeb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.loginBottom div a.kakaoLogin{
-    background-color: #ffe812;
-    color: #1c1c1c;
-}
-
-.loginBottom div a svg{
-    width: 24px;
-    height: 24px;
-    margin-right: 21px;
 }

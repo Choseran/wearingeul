@@ -5,6 +5,9 @@ import App from './App.vue'
 import router from "./router";
 
 // store
-// import store from './store';
+import store from './store/store.js';
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App);
+app.use(router);
+app.use(store);
+window.app = app.mount('#app');
