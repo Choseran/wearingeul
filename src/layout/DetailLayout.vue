@@ -1,5 +1,7 @@
 <template>
-    <router-view />
+    <div class="detailWrap">
+        <router-view />
+    </div>
 </template>
 
 <script>
@@ -10,6 +12,7 @@ export default {
 
 <style>
   @import '@/assets/css/main.css';
-  @import '@/assets/css/user.css';
+  @import '@/assets/css/detail.css';
 </style>
-
+    
+    

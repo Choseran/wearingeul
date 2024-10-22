@@ -9,7 +9,7 @@
                     <option value="best">인기순</option>
                 </select>
             </div>
-            <main-content-component :goodsList="deppenGoods" object="deppen-product"/>
+            <main-content-component :goodsList="deppenGoods.slice(0, 9)" object="deppen-product"/>
         </div>
     </div>
 </template>

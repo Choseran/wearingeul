@@ -4,14 +4,14 @@
         <v-form>
             <div class="loginInput">
                 <p>아이디</p>
-                <input type="text" v-model="userId" placeholder="아이디를 입력해주세요" required>
+                <input type="text" id="userId" v-model="userId" placeholder="아이디를 입력해주세요" required>
             </div>
             <div class="loginInput">
                 <p>비밀번호</p>
-                <input type="password" v-model="userPassword" placeholder="비밀번호를 입력해주세요" required>
+                <input type="password" id="userPassword" v-model="userPassword" placeholder="비밀번호를 입력해주세요" required>
             </div>
             <div class="loginBtn btnB">
-                <button @click="loginSubmit">로그인</button>
+                <button @click="loginSubmit()">로그인</button>
             </div>
         </v-form>
         <div class="loginMiddle spaceBetween">
@@ -37,28 +37,34 @@
 <script>
 export default {
     name: "LoginView",
+    data() {
+        return {
+            userId: null,
+            userPassword: null,
+        }
+    },
     methods: {
-        // loginSubmit(){
-        //     let saveData = {};
-        //     saveData.userId = this.userId;
-        //     saveData.userPassword = this.userPassword;
+        loginSubmit(){
+            let saveData = {};
+            saveData.userId = this.userId;
+            saveData.userPassword = this.userPassword;
 
-        //     try{
-        //         this.$axios.post(HOST + "/signin", JSON.stringify(saveData),{
-        //             headers:{
-        //                 "Content-Type" : `application/json`,
-        //             },
-        //         })
-        //         .then((res)=>{
-        //             if(res.status === 200){
-        //                 this.$store.commit("login", res.data);
-        //                 this.$router.push("/")
-        //             }
-        //         });
-        //     } catch(error){
-        //         console.log(error);
-        //     }
-        // },
+            // try{
+            //     this.$axios.post(HOST + "/signin", JSON.stringify(saveData),{
+            //         headers:{
+            //             "Content-Type" : `application/json`,
+            //         },
+            //     })
+            //     .then((res)=>{
+            //         if(res.status === 200){
+            //             this.$store.commit("login", res.data);
+            //             this.$router.push("/")
+            //         }
+            //     });
+            // } catch(error){
+            //     console.log(error);
+            // }
+        },
     },
 };
 </script>

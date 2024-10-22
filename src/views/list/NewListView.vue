@@ -9,7 +9,7 @@
                     <option value="best">인기순</option>
                 </select>
             </div>
-            <main-content-component :goodsList="newGoods" object="new"/>
+            <main-content-component :goodsList="newGoods.slice(0, 9)" object="new"/>
         </div>
     </div>
 </template>

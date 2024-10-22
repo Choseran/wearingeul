@@ -262,8 +262,10 @@ header .headerBottom .submenu{
 }
 
 .mainGoodsContent{
+    display: flex;
     flex-wrap: wrap;
     align-items: baseline;
+    margin-right: -20px;
 }
 .goodsContent a{
     display: inline-block;
@@ -273,6 +275,7 @@ header .headerBottom .submenu{
 .goodsContent li{
     width: 285px;
     margin-bottom: 36px;
+    margin-right: 20px;
 }
 
 .goodsContent .goodsImg{

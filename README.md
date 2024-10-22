@@ -6,6 +6,7 @@
 npm install
 npm install -g @vue/cli
 npm install vuex@next --save
+npm install --save axios
 
 <!-- npm install --save vuex-persistedstate -->
 ```

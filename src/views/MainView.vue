@@ -21,14 +21,14 @@
             <p>베스트 상품</p>
             <router-link to="/best">더보기</router-link>
         </div>
-        <main-content-component :goodsList="bestGoods" object="best"/>
+        <main-content-component :goodsList="bestGoods.slice(0, 8)" object="best"/>
     </div>
     <div class="mainContent">
         <div class="mainContentTop spaceBetween">
             <p>신상품</p>
             <router-link to="/new">더보기</router-link>
         </div>
-        <main-content-component :goodsList="newGoods" object="new"/>
+        <main-content-component :goodsList="newGoods.slice(0, 8)" object="new"/>
     </div>
 
     
@@ -48,14 +48,14 @@
                 :slidesPerGroup="4"
                 :spaceBetween="20"
             >
-                <swiper-slide v-for="goods in saleGoods" :key="goods">
+                <swiper-slide v-for="(goods, index) in saleGoods.slice(0, 8)" :key="goods">
                     <RouterLink to="/">
                         <div class="goodsImg">
-                            <div v-if="goods.class" class="goodsTag">
-                                <span v-for="goodsClass in goods.class" :key="goodsClass" :class="goodsClass">{{ goodsClass }}</span>
+                            <div v-if="goods.tag" class="goodsTag">
+                                <span v-for="goodsTag in goods.tag" :key="goodsTag" :class="goodsTag">{{ goodsTag }}</span>
                             </div>
-                            <img :src="require(`@/assets/img/sale${goods.i}_hover.jpg`)" :alt="`${goods.title}`">
-                            <img :src="require(`@/assets/img/sale${goods.i}.jpg`)" :alt="`${goods.title}`">
+                            <img :src="require(`@/assets/img/sale${index + 1}_hover.jpg`)" :alt="`${goods.title}`">
+                            <img :src="require(`@/assets/img/sale${index + 1}.jpg`)" :alt="`${goods.title}`">
                         </div>
                     </RouterLink>
                     <div class="goodsText">
@@ -78,87 +78,20 @@
 
         <div class="mainContentBottom spaceBetween">
             <div class="collaboLeft">
-                <div class="collaboTop">
-                    <div class="collaboImg">
-                        <RouterLink to="/">
-                            <img src="@/assets/img/collabo1.jpg">
-                        </RouterLink>
-                    </div>
-                    <div class="collaboTitle">
-                        <router-link to="/">하루만 네가 되고 싶어</router-link>
-                        <router-link to="/">네이버 웹툰</router-link>
-                    </div>
-                </div>
-                <div class="collaboBottom">
-                    <div>
-                        <div>
-                            <router-link to="/" class="collaboProduct">
-                                <img src="@/assets/img/collabo1-1.jpg" alt="">
-                            </router-link>
-                        </div>
-                        <div class="collaboProductTitle">
-                            <div>
-                                <router-link to="/">메데이아 벨리아르 깃펜 펜레스트 세트</router-link>
-                                <router-link to="/">30,000 원</router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <router-link to="/" class="collaboProduct">
-                                <img src="@/assets/img/collabo1-2.jpg" alt="">
-                            </router-link>
-                        </div>
-                        <div class="collaboProductTitle">
-                            <div>
-                                <router-link to="/">프시케 폴리 깃펜 펜레스트 세트</router-link>
-                                <router-link to="/">30,000 원</router-link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <collabo-content-component
+                    collaboTitle="하루만 네가 되고 싶어"
+                    collaboCompany="네이버 웹툰"
+                    collaboNum="1"
+                    :collaboGoods="collabo1"
+                />
             </div>
             <div class="collaboRight">
-                
-                <div class="collaboTop">
-                    <div class="collaboImg">
-                        <RouterLink to="/">
-                            <img src="@/assets/img/collabo2.jpg">
-                        </RouterLink>
-                    </div>
-                    <div class="collaboTitle">
-                        <router-link to="/">죽음에 관하여</router-link>
-                        <router-link to="/">네이버 웹툰</router-link>
-                    </div>
-                </div>
-                <div class="collaboBottom">
-                    <div>
-                        <div>
-                            <router-link to="/" class="collaboProduct">
-                                <img src="@/assets/img/collabo2-1.jpg" alt="">
-                            </router-link>
-                        </div>
-                        <div class="collaboProductTitle">
-                            <div>
-                                <router-link to="/">페이퍼 인센스 세트</router-link>
-                                <router-link to="/">33,000 원</router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <router-link to="" class="collaboProduct">
-                                <img src="@/assets/img/collabo2-2.jpg" alt="">
-                            </router-link>
-                        </div>
-                        <div class="collaboProductTitle">
-                            <div>
-                                <router-link to="/">책끝 종이 북마크</router-link>
-                                <router-link to="/">25,000 원</router-link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <collabo-content-component
+                    collaboTitle="죽음에 관하여"
+                    collaboCompany="네이버 웹툰"
+                    collaboNum="2"
+                    :collaboGoods="collabo2"
+                />
             </div>
         </div>
     </div>
@@ -171,6 +104,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper';
 import MainContentComponent from '@/components/MainContentComponent.vue';
+import CollaboContentComponent from '@/components/CollaboContentComponent.vue';
 import { bestGoods } from '@/assets/js/goodsList/best';
 import { newGoods } from '@/assets/js/goodsList/new';
 import { saleGoods } from '@/assets/js/goodsList/sale';
@@ -181,6 +115,7 @@ export default {
         Swiper,
         SwiperSlide,
         MainContentComponent,
+        CollaboContentComponent
     },
     data() {
         return {
@@ -194,7 +129,15 @@ export default {
             },
             bestGoods: bestGoods,
             newGoods: newGoods,
-            saleGoods: saleGoods
+            saleGoods: saleGoods,
+            collabo1: [
+                {i: 1, goods: "메데이아 벨리아르 깃펜 펜레스트 세트", price: "30,000 원"},
+                {i: 2, goods: "프시케 폴리 깃펜 펜레스트 세트", price: "30,000 원"}
+            ],
+            collabo2: [
+                {i: 1, goods: "페이퍼 인센스 세트", price: "33,000 원"},
+                {i: 2, goods: "책끝 종이 북마크", price: "25,000 원"}
+            ]
         }
     },
     setup() {

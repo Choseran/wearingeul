@@ -29,6 +29,9 @@
     height: 12px;
 }
 
+.productDetailInfo{
+    align-items: flex-start;
+}
 .productDetailInfo>div {
     width: calc(50% - 20px);
 }

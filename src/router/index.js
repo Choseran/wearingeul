@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 // import { userStore } from "@/store/modules/userStore.js";
-import MainLayout from "@/layout/MainLayout.vue";
+import ListLayout from "@/layout/ListLayout.vue";
+import DetailLayout from "@/layout/DetailLayout.vue";
+
 import MainView from '../views/MainView.vue'
 import DippenListView from "@/views/list/DippenListView.vue";
 import BestListView from "@/views/list/BestListView.vue";
@@ -14,58 +16,49 @@ const routes = [
     {
         path: '/',
         component: MainView,
-        meta: {
-            layout: MainLayout
-        }
     },
     {
         path: '/dip-pen',
         component: DippenListView,
         meta: {
-            layout: MainLayout
+            layout: ListLayout
         }
     },
     {
         path: '/best',
         component: BestListView,
         meta: {
-            layout: MainLayout
+            layout: ListLayout
         }
     },
     {
         path: '/new',
         component: NewListView,
         meta: {
-            layout: MainLayout
+            layout: ListLayout
         }
     },
     {
         path: '/sale',
         component: SaleListView,
         meta: {
-            layout: MainLayout
+            layout: ListLayout
         }
     },
     {
         path: '/detail/1',
         component: SmilecatView,
         meta: {
-            layout: MainLayout
+            layout: DetailLayout
         }
     },
     {
         path: '/login',
         component: LoginView,
-        meta: {
-            layout: MainLayout
-        }
     },
     {
         path: '/register',
         component: RegisterView,
-        meta: {
-            layout: MainLayout
-        }
     }
 ]
 
